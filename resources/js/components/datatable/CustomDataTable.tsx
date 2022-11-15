@@ -7,7 +7,6 @@ import MUIDataTable from "mui-datatables";
 import { retriveFromObject } from "../../helper";
 import { saveAs } from "file-saver";
 import { useDebounce } from "ahooks";
-import { useHistory } from "react-router";
 import ContentLoading from "../loader/ContentLoader";
 
 interface IFDataTable {
@@ -71,6 +70,9 @@ const CustomDataTable = ({
     },
     filter: false,
     print: true,
+    onRowsDelete: (rowsDeleted, newData) => {
+      console.dir(rowsDeleted);
+    },
     onDownload: (buildHead, buildBody, col, values) => {
       const totalKeys = [...downloadOption?.key];
       //! Selected Columns and Keys
@@ -257,7 +259,7 @@ const CustomDataTable = ({
     onSearchChange(searchText: any) {
       setValue(searchText === null ? "" : searchText);
     },
-    onChangeRowsPerPage(numberOfRows: any) {
+    onChangeRowsPerPage(numberOfRows: number) {
       setSearchQuery({
         ...searchQuery,
         take: numberOfRows,

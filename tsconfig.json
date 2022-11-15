@@ -29,7 +29,7 @@
   },
   "include": [
     "resources/js"
-, "_table.tsx", "_table.tsx"  ],
+, "table.md", "table.md"  ],
   "exclude": [
     "node_modues"
   ]   

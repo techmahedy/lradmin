@@ -101,14 +101,14 @@ const UserIndex = () => {
                                                 user?.UserName,
                                                 user?.Phone,
                                                 user?.created_at,
-                                                <div className="action-button">
+                                                <div className="action-button" key={user?.id}>
                                                     <Link
                                                         to={`/user/edit/${user?.id}`}
-                                                        className="button-edit py-0"
+                                                        className="btn btn-primary text-white py-0"
                                                     >
                                                         Edit
                                                     </Link>
-                                                    <button className="button-delete py-0" onClick={() => {deleteUser(user?.id)}} >
+                                                    <button className="btn btn-danger text-white py-0 ms-1" onClick={() => {deleteUser(user?.id)}} >
                                                         Delete
                                                     </button>
                                                 </div>
