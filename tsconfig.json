@@ -24,12 +24,14 @@
       "node"
     ],
     "typeRoots": [
-        "node_modules/@types"
+      "node_modules/@types"
     ],                        
   },
   "include": [
-    "resources/js"
-, "table.md", "table.md"  ],
+    "resources/js",
+    "table.md", 
+    "table.md"  
+  ],
   "exclude": [
     "node_modues"
   ]   

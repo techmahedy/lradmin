@@ -74,7 +74,6 @@ const UserIndex = () => {
 					    </div>
 				    </div>
 			    </div>
-	
 				<div className="tab-content" id="orders-table-tab-content">
 			        <div className="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 					    <div className="app-card app-card-orders-table shadow-sm mb-5">
@@ -97,25 +96,25 @@ const UserIndex = () => {
                                         ? userStateData?.data?.data?.users?.data?.map(
                                             (user: any, index: any) => {
                                                 const arr = [
-                                                user?.id,
-                                                user?.UserName,
-                                                user?.Phone,
-                                                user?.created_at,
-                                                <div className="action-button" key={user?.id}>
-                                                    <Link
-                                                        to={`/user/edit/${user?.id}`}
-                                                        className="btn btn-primary text-white py-0"
-                                                    >
-                                                        Edit
-                                                    </Link>
-                                                    <button className="btn btn-danger text-white py-0 ms-1" onClick={() => {deleteUser(user?.id)}} >
-                                                        Delete
-                                                    </button>
-                                                </div>
+                                                    user?.id,
+                                                    user?.UserName,
+                                                    user?.Phone,
+                                                    user?.created_at,
+                                                    <div className="action-button">
+                                                        <Link
+                                                            to={`/user/edit/${user?.id}`}
+                                                            className="btn btn-primary text-white py-0"
+                                                        >
+                                                            Edit
+                                                        </Link>
+                                                        <button className="btn btn-danger text-white py-0 ms-1" onClick={() => {deleteUser(user?.id)}} >
+                                                            Delete
+                                                        </button>
+                                                    </div>
                                                 ];
                                                 tableIndex++;
                                                 return arr;
-                                            }
+                                            },
                                         ) : []
                                     }
                                     downloadOption={{

@@ -249,7 +249,7 @@ const CustomDataTable = ({
       },
     },
     count: pagination?.total,
-    rowsPerPage: searchQuery?.take,
+    rowsPerPage: parseInt(searchQuery?.take),
     rowsPerPageOptions: [5, 10, 15, 20, 50, 100],
     jumpToPage: true,
     serverSide: true,
@@ -271,13 +271,13 @@ const CustomDataTable = ({
       <MUIDataTable
         title={title}
         data={data}
-        columns={columns?.map((columName) => {
+        columns={columns?.map((columName,index) => {
           return {
             name: columName,
             options: {
               filter: true,
               sort: true,
-            },
+            }
           };
         }) || [] }
         options={options}
